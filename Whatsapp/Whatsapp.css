@@ -1,0 +1,635 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    min-height: 100vh;    /*important for JS scroll thing*/
+    width: 100%;
+    background-color: #FCF9F2;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.left{
+    margin: auto;
+    margin-left: 50px;
+}
+.left:hover{
+    cursor: pointer;
+}
+.middle{
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.object{
+    position: relative;
+    cursor: pointer;
+}
+.object::before{
+    content: "";
+    position: absolute;
+    background-color: #2bd46f;       /* very very Important concept (object)*/
+    width: 100%;
+    height: 1px;
+    top: 100%;
+    border-radius: 9999px;
+    transform: scaleX(0);
+    transition: all .35s linear;
+    transform-origin: left;
+}
+.object:hover::before{
+    transform: scaleX(1);
+    height: 2px;
+}
+.right{
+    margin: auto;
+    margin-right: 50px;
+    background-color: #2bd46f;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, sans-serif;
+    border: 1px solid #000000;
+    border-radius: 9999px;
+    padding: 15px 32px;
+    position: relative;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.right::before,.section1leftc::before,.footerfirstpart1b::before{
+    z-index: -1;
+    opacity: 0;
+    content: "";
+    scale: 1.25;                              /* VVV important hover and before*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    transition: .4s .4s;
+    transform: translateY(40px);
+}
+.right:hover::before,.section1leftc:hover::before,.footerfirstpart1b:hover::before{
+    background-color: #ffffff;
+    transform: translateY(0);
+    opacity: 1;
+}
+.right:hover,.section1leftc:hover,.footerfirstpart1b:hover{
+    cursor: pointer;
+}
+.right > img,.section1leftc > img{
+    margin-top: 2px;
+}
+.section1{
+    max-width: 100%;
+    max-height: 82%;
+    margin: 30px 30px 10px 30px;
+    background-image: url(Pictures/MaaBeti.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #FCF9F2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.section1left{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 310px;
+    margin-bottom: 90px;
+}
+.section1lefta{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    color: white;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -2px;
+    font-size: 80px;
+    max-width: 300px;
+    margin-right: 25px;
+}
+.section1leftb{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    color: white;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 20px; 
+    max-width: 320px; 
+    margin-top: 20px;  
+    position: relative;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.section1leftc{
+    margin: auto;
+    margin-right: 50px;
+    width: 170px;
+    background-color: #2bd46f;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, sans-serif;
+    border: 1px solid #000000;
+    border-radius: 9999px;
+    padding: 15px 32px;
+    margin-right: 160px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.section1right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-left: 170px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.image1a{
+    animation: ani1 .5s ease-in-out;
+}
+@keyframes ani1{
+    0%{
+        transform: translateY(40px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.image1b{
+    position: relative;
+    top: 17px;
+    right: 330px;
+    animation: ani2 .75s ease-in-out;
+}
+@keyframes ani2{
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.image2{
+    bottom: 10px;
+    position: relative;
+    right: 80px;
+    height: 110px;
+    animation: ani3 1s ease-in-out;
+}
+@keyframes ani3{
+    0%{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 100%;
+    }
+}
+.image3{
+    animation: ani3 1.5s ease-in-out;
+}
+.image4a{
+    height: 230px;
+    animation: ani3 2s ease-in-out;
+}
+.image4b{
+    position: relative;
+    bottom: 25px;
+    right: 5px;
+    animation: ani2 2.5s ease-in-out;
+}
+.image5{
+    animation: ani3 3s ease-in-out;
+}
+.section2{
+    overflow: hidden;
+}
+.section2a{
+    color: #5E5E5E;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    font-family: "Times New Roman", Times, serif;
+    margin-right: 30px;
+    overflow-x: hidden;
+}
+.section2b{
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 60px 0;
+    overflow-x: hidden;
+}
+.section2d{
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 60px 0; 
+    overflow-x: hidden;  
+}
+.section2c{
+    margin: auto;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: -.5px;
+    max-width: 800px;
+    overflow-x: hidden;
+}
+.section3a{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+.section3aleft{
+    margin-top: 140px;
+}
+.section3aleftfirst{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: #111b21;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+.section3aleftmiddle{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -.2px;
+    color: #111b21; 
+    max-width: 400px;  
+    margin-bottom: 20px;
+}
+.section3aleftlast{
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #111b21;
+    font-size: 16px;
+    gap: 10px;
+}
+.section3aleftlast > p,.section3brightlast >p,.section3cleftlast > p,.section3drightlast > p,.section3eleftlast > p{
+    text-decoration: underline #2bd46f;
+    text-underline-offset: 5px;
+}
+.section3aleftlast:hover{
+    color: #026c45;
+    cursor: pointer;
+}
+.section3b{
+    margin-top: 80px;
+    background-color: #111b21;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.section3bleft{
+    margin-top: 120px;
+}
+.section3bright{
+    margin-top: 300px;
+}
+.section3brightfirst{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: white;    
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+#freely{
+    color: #2bd46f;
+}
+.section3brightmiddle{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -.2px;
+    color: #ffffff;
+    max-width:470px;
+    margin-bottom: 20px; 
+}
+.section3brightlast{
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 16px;
+    gap: 10px;    
+}
+.section3brightlast:hover{
+    color: #2bd46f;
+    cursor: pointer;
+}
+.section3c{
+    display: flex;
+    justify-content: center;
+    gap: 190px;
+    margin-top: 80px;
+}
+.section3cleft{
+    margin-top: 140px;
+}
+.section3cleftfirst{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: #111b21;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+.section3cleftmiddle{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -.2px;
+    color: #111b21; 
+    max-width: 460px;  
+    margin-bottom: 20px;
+}
+.section3cleftlast{
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #111b21;
+    font-size: 16px;
+    gap: 10px;
+} 
+.section3cleftlast:hover{
+    color: #026c45;
+    cursor: pointer;
+}
+.section3cright{
+    background-image: url(Pictures/grp.png);
+    height: 700px;
+    background-repeat: no-repeat;
+}
+#grpmsg{
+    position: relative;
+    top:50px;
+    right: 15px;
+}
+.section3d{
+    width: 100%;
+    min-height: 950px;
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    margin-left: 100px;
+}
+.section3dleft{
+    margin-top: 120px;
+    background-image: url(Pictures/beachWaliDidi.png);
+    background-repeat: no-repeat;
+}
+.section3dright{
+    margin-top: 300px;
+}
+.section3drightfirst{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: #111b21;    
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+.section3drightmiddle{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -.2px;
+    color: #111b21;
+    max-width:490px;
+    margin-bottom: 20px; 
+}
+.section3drightlast{
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #111b21;
+    font-size: 16px;
+    gap: 10px;    
+}
+.section3drightlast:hover{
+    color: #026c45;
+    cursor: pointer;
+}
+#beach{
+    position: relative;
+    top: 370px;
+    left: 20px;
+}
+.section3e{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+.section3eleft{
+    margin-top: 140px;
+}
+.section3eleftfirst{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: #111b21;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+.section3eleftmiddle{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -.2px;
+    color: #111b21; 
+    max-width: 500px;  
+    margin-bottom: 20px;
+}
+.section3eleftlast{
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #111b21;
+    font-size: 16px;
+    gap: 10px;
+}
+.section3eleftlast:hover{
+    color: #026c45;
+    cursor: pointer;
+}
+.footer{
+    width: 100%;
+    height: 510px;
+    background-color: #111b21;
+    color: white;
+}
+.footerfirst{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+.footerfirstpart1{
+    margin-top: 100px;
+    margin-left: 230px;
+}
+.footerfirstpart1a:hover{
+    cursor: pointer;
+}
+.footerfirstpart1b{
+    margin: auto;
+    margin-right: 80px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #2bd46f;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    font-family: system-ui, -apple-system, sans-serif;
+    border: 1px solid #111b21;
+    border-radius: 9999px;
+    padding: 15px 32px;   
+    color: #111b21;
+    position: relative;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.footerfirstpart1b > img{
+    margin-top: 2px;
+}
+.footerfirstpart2,.footerfirstpart3,.footerfirstpart4,.footerfirstpart5{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.footerfirstpart2 > p,.footerfirstpart3 > p,.footerfirstpart4 > p,.footerfirstpart5 > p{
+    font-size: 13px;
+    color: #ffffffcc;
+    margin-bottom: 30px;
+}
+.footerfirstpart2 > ul li,.footerfirstpart3 > ul li,.footerfirstpart4 > ul li,.footerfirstpart5 > ul li{
+    font-size: 18px;
+    margin-bottom: 22px;
+    margin-right: 60px;
+}
+.footerfirstpart2 > ul li:last-child,.footerfirstpart3 > ul li:last-child,.footerfirstpart4 > ul li:last-child,.footerfirstpart5 > ul li:last-child{
+    margin-bottom: 0;
+}
+.footerfirstpart2 > ul li:hover,.footerfirstpart3 > ul li:hover,.footerfirstpart4 > ul li:hover,.footerfirstpart5 > ul li:hover{
+    cursor: pointer;
+    text-decoration: underline white;
+}
+.footerfirstpart2 > ul li::marker,.footerfirstpart3 > ul li::marker,.footerfirstpart4 > ul li::marker,.footerfirstpart5 > ul li::marker{
+    color: rgba(255, 255, 255, 0.019);;
+}
+.footerlast{
+    display: flex;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+.line{
+    height: .5px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: #304045;
+}
+.footerlastpart1{
+    max-width: 100px;
+    margin-left: 235px;
+    font-weight: 400;
+}
+.footerlastpart2{
+    max-width: 100px;
+    margin-left: 60px;
+    font-weight: 400;
+}
+.footerlastpart3{
+    margin-left: 10px;
+    font-weight: 400;
+}
+.footerlastpart2:hover,.footerlastpart3:hover{
+    cursor: pointer;
+}
+.footerlastpart4{
+    margin-left: 60px;
+    margin-right: 180px;
+}
+.images{
+    margin-right: 20px;
+}
+.footerlastpart4 > img{
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(41, 37, 37, 0.486);
+}
+.footerlastpart4 > img:hover{
+    cursor: pointer;
+}
+.footerlastpart5{
+    font-size: 17px;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 9999px;
+    padding: 15px 26px;
+}
+.footerlastpart5 > span{
+    margin-right: 80px;
+}
